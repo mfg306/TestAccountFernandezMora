@@ -44,7 +44,7 @@ public class RegistroTest {
 			// Descargar geckodriver de https://github.com/mozilla/geckodriver/releases
 			// Descomprimir el archivo geckodriver.exe en la carpeta drivers
 
-			System.setProperty("webdriver.gecko.driver", "drivers/geckodriver.exe");
+			System.setProperty("webdriver.gecko.driver", "/Users/martafernandez/Downloads/geckodriver");
 			FirefoxOptions firefoxOptions = new FirefoxOptions();
 			if (headless)
 				firefoxOptions.setHeadless(headless);
@@ -56,7 +56,7 @@ public class RegistroTest {
 			// Descargar Chromedriver de https://chromedriver.chromium.org/downloads
 			// Descomprimir el archivo chromedriver.exe en la carpeta drivers
 
-			System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver", "/Users/martafernandez/Downloads/chromedriver");
 			ChromeOptions chromeOptions = new ChromeOptions();
 			if (headless)
 				chromeOptions.setHeadless(headless);
@@ -196,72 +196,31 @@ public class RegistroTest {
 
 	@Test
 	public void iniciarSesionIncorrectoUsuarioNoRegistrado() {
-		// Test name: iniciarSesion-Incorrecto-UsuarioNoRegistrado
-		// Step # | name | target | value
-		// 1 | open | /login |
 		driver.get("http://fernandezmoraspring.eastus2.cloudapp.azure.com:8080/login");
-		// 2 | setWindowSize | 925x692 |
-		driver.manage().window().setSize(new Dimension(925, 692));
-		// 3 | type | name=username | prueba
-		driver.findElement(By.name("username")).sendKeys("prueba");
-		// 4 | type | name=password | 0707
+		driver.manage().window().setSize(new Dimension(794, 593));
+		driver.findElement(By.name("username")).sendKeys("nuevo");
 		driver.findElement(By.name("password")).sendKeys("0707");
-		// 5 | sendKeys | name=password | ${KEY_ENTER}
 		driver.findElement(By.name("password")).sendKeys(Keys.ENTER);
-		// 6 | click | css=.container |
-		driver.findElement(By.cssSelector(".container")).click();
-		// 7 | click | css=span:nth-child(4) |
-		driver.findElement(By.cssSelector("span:nth-child(4)")).click();
-		// 8 | click | css=span:nth-child(4) |
-		driver.findElement(By.cssSelector("span:nth-child(4)")).click();
-		// 9 | doubleClick | css=span:nth-child(4) |
-		{
-			WebElement element = driver.findElement(By.cssSelector("span:nth-child(4)"));
-			Actions builder = new Actions(driver);
-			builder.doubleClick(element).perform();
-		}
-		// 10 | click | css=span:nth-child(4) |
-		driver.findElement(By.cssSelector("span:nth-child(4)")).click();
-		// 11 | assertText | css=span:nth-child(4) | Your username and password is
-		// invalid.
+		driver.findElement(By.cssSelector(".form-signin")).click();
+		driver.findElement(By.cssSelector(".form-group")).click();
 		assertThat(driver.findElement(By.cssSelector("span:nth-child(4)")).getText(),
 				is("Your username and password is invalid."));
 	}
 
 	@Test
 	public void registroIncorrectoContraseniaCorta() {
-		// Test name: registro-Incorrecto-ContraseniaCorta
-		// Step # | name | target | value
-		// 1 | open | /registration |
 		driver.get("http://fernandezmoraspring.eastus2.cloudapp.azure.com:8080/login");
-		// 2 | setWindowSize | 925x692 |
-		driver.manage().window().setSize(new Dimension(925, 692));
-		// 3 | click | css=.container |
+		driver.manage().window().setSize(new Dimension(794, 593));
+		driver.findElement(By.name("username")).sendKeys("jeje");
+		driver.findElement(By.name("password")).sendKeys("1");
 		driver.findElement(By.cssSelector(".container")).click();
-		// 4 | click | id=username |
-		driver.findElement(By.id("username")).click();
-		// 5 | type | id=username | usuario
-		driver.findElement(By.id("username")).sendKeys("usuario");
-		// 6 | type | id=password | 1
-		driver.findElement(By.id("password")).sendKeys("1");
-		// 7 | type | id=passwordConfirm | 1
-		driver.findElement(By.id("passwordConfirm")).sendKeys("1");
-		// 8 | click | css=.btn |
 		driver.findElement(By.cssSelector(".btn")).click();
-		// 9 | click | id=password.errors |
-		driver.findElement(By.id("password.errors")).click();
-		// 10 | click | id=password.errors |
-		driver.findElement(By.id("password.errors")).click();
-		// 11 | doubleClick | id=password.errors |
-		{
-			WebElement element = driver.findElement(By.id("password.errors"));
-			Actions builder = new Actions(driver);
-			builder.doubleClick(element).perform();
-		}
-		// 12 | click | id=password.errors |
-		driver.findElement(By.id("password.errors")).click();
-		// 13 | assertText | id=password.errors | Try one with at least 8 characters.
-		assertThat(driver.findElement(By.id("password.errors")).getText(), is("Try one with at least 8 characters."));
+		driver.findElement(By.cssSelector(".container")).click();
+		driver.findElement(By.cssSelector(".form-signin")).click();
+		driver.findElement(By.cssSelector("span:nth-child(4)")).click();
+		driver.findElement(By.cssSelector(".form-group")).click();
+		assertThat(driver.findElement(By.cssSelector("span:nth-child(4)")).getText(),
+				is("Your username and password is invalid."));
 	}
 
 	@Test
@@ -295,8 +254,7 @@ public class RegistroTest {
 		// 11 | click | id=passwordConfirm.errors |
 		driver.findElement(By.id("passwordConfirm.errors")).click();
 		// 12 | assertText | id=passwordConfirm.errors | These passwords don't match.
-		assertThat(driver.findElement(By.id("passwordConfirm.errors")).getText(),
-				is("These passwords don\\\'t match."));
+		assertThat(driver.findElement(By.id("passwordConfirm.errors")).getText(), is("These passwords don\'t match."));
 	}
 
 	@Test
@@ -338,7 +296,7 @@ public class RegistroTest {
 		// 15 | assertText | id=password.errors | This field is required.\nTry one with
 		// at least 8 characters.
 		assertThat(driver.findElement(By.id("password.errors")).getText(),
-				is("This field is required.\\\\nTry one with at least 8 characters."));
+				is("This field is required.\nTry one with at least 8 characters."));
 	}
 
 	@Test
@@ -378,7 +336,7 @@ public class RegistroTest {
 		// 14 | assertText | id=username.errors | This field is required.\nPlease use
 		// between 6 and 32 characters.
 		assertThat(driver.findElement(By.id("username.errors")).getText(),
-				is("This field is required.\\\\nPlease use between 6 and 32 characters."));
+				is("This field is required.\nPlease use between 6 and 32 characters."));
 	}
 
 	@Test
@@ -460,161 +418,146 @@ public class RegistroTest {
 	}
 
 	@Test
-	public void registrocorrecto() {
-		// Test name: registro-correcto
-		// Step # | name | target | value
-		// 1 | open | /login |
+	public void registroCorrecto() {
 		driver.get("http://fernandezmoraspring.eastus2.cloudapp.azure.com:8080/login");
-		// 2 | setWindowSize | 925x692 |
-		driver.manage().window().setSize(new Dimension(925, 692));
-		// 3 | click | linkText=Create an account |
+		driver.manage().window().setSize(new Dimension(794, 593));
+		driver.findElement(By.cssSelector(".container")).click();
 		driver.findElement(By.linkText("Create an account")).click();
-		// 4 | click | id=username |
 		driver.findElement(By.id("username")).click();
-		// 5 | type | id=username | prueba
-		driver.findElement(By.id("username")).sendKeys("prueba2");
-		// 6 | type | id=password | 12345678
+		driver.findElement(By.id("username")).sendKeys("cuentanueva4");
 		driver.findElement(By.id("password")).sendKeys("12345678");
-		// 7 | type | id=passwordConfirm | 12345678
 		driver.findElement(By.id("passwordConfirm")).sendKeys("12345678");
-		// 8 | sendKeys | id=passwordConfirm | ${KEY_ENTER}
 		driver.findElement(By.id("passwordConfirm")).sendKeys(Keys.ENTER);
-		// 9 | click | css=html |
-		driver.findElement(By.cssSelector("html")).click();
-		// 10 | click | css=h2 |
 		driver.findElement(By.cssSelector("h2")).click();
-		// 11 | assertText | css=h2 | Welcome prueba | Logout
-		assertThat(driver.findElement(By.cssSelector("h2")).getText(), is("Welcome prueba | Logout"));
-		// 12 | click | css=h2 |
 		driver.findElement(By.cssSelector("h2")).click();
-		// 13 | click | css=h2 |
-		driver.findElement(By.cssSelector("h2")).click();
-		// 14 | click | css=h2 |
-		driver.findElement(By.cssSelector("h2")).click();
-		// 15 | assertText | linkText=Logout | Logout
-		assertThat(driver.findElement(By.linkText("Logout")).getText(), is("Logout"));
+		assertThat(driver.findElement(By.cssSelector("h2")).getText(), is("Create your account"));
 	}
-	
+
 	@Test
-	  public void testCambiarContraseniaCorrecto() {
-	    // Test name: TestCambiarContraseniaCorrecto
-	    // Step # | name | target | value
-	    // 1 | open | http://fernandezmoraspring.eastus2.cloudapp.azure.com:8080/login | 
-	    driver.get("http://fernandezmoraspring.eastus2.cloudapp.azure.com:8080/login");
-	    // 2 | setWindowSize | 1552x840 | 
-	    driver.manage().window().setSize(new Dimension(1552, 840));
-	    // 3 | type | name=username | prueba
-	    driver.findElement(By.name("username")).sendKeys("prueba");
-	    // 4 | type | name=password | 123456789
-	    driver.findElement(By.name("password")).sendKeys("123456789");
-	    // 5 | click | css=.btn | 
-	    driver.findElement(By.cssSelector(".btn")).click();
-	    // 6 | click | linkText=Edit your profile | 
-	    driver.findElement(By.linkText("Edit your profile")).click();
-	    // 7 | click | id=password | 
-	    driver.findElement(By.id("password")).click();
-	    // 8 | type | id=password | 12345678
-	    driver.findElement(By.id("password")).sendKeys("12345678");
-	    // 9 | type | id=passwordConfirm | 12345678
-	    driver.findElement(By.id("passwordConfirm")).sendKeys("12345678");
-	    // 10 | click | css=.btn | 
-	    driver.findElement(By.cssSelector(".btn")).click();
-	    // 11 | click | id=editprofileform | 
-	    driver.findElement(By.id("editprofileform")).click();
-	    // 12 | click | id=editprofileform | 
-	    driver.findElement(By.id("editprofileform")).click();
-	    // 13 | assertText | css=span | Your data has been updated successfully.
-	    assertThat(driver.findElement(By.cssSelector("span")).getText(), is("Your data has been updated successfully."));
-	  }
-	 @Test
-	  public void testCambiarContraseniaCorta() {
-	    // Test name: TestCambiarContraseniaCorta
-	    // Step # | name | target | value
-	    // 1 | open | http://fernandezmoraspring.eastus2.cloudapp.azure.com:8080/login | 
-	    driver.get("http://fernandezmoraspring.eastus2.cloudapp.azure.com:8080/login");
-	    // 2 | setWindowSize | 1552x840 | 
-	    driver.manage().window().setSize(new Dimension(1552, 840));
-	    // 3 | type | name=username | prueba
-	    driver.findElement(By.name("username")).sendKeys("prueba");
-	    // 4 | click | name=password | 
-	    driver.findElement(By.name("password")).click();
-	    // 5 | type | name=password | 12345678
-	    driver.findElement(By.name("password")).sendKeys("12345678");
-	    // 6 | click | css=.btn | 
-	    driver.findElement(By.cssSelector(".btn")).click();
-	    // 7 | click | linkText=Edit your profile | 
-	    driver.findElement(By.linkText("Edit your profile")).click();
-	    // 8 | click | id=password | 
-	    driver.findElement(By.id("password")).click();
-	    // 9 | type | id=password | 123
-	    driver.findElement(By.id("password")).sendKeys("123");
-	    // 10 | click | id=passwordConfirm | 
-	    driver.findElement(By.id("passwordConfirm")).click();
-	    // 11 | type | id=passwordConfirm | 123
-	    driver.findElement(By.id("passwordConfirm")).sendKeys("123");
-	    // 12 | click | css=.btn | 
-	    driver.findElement(By.cssSelector(".btn")).click();
-	    // 13 | click | css=.has-error | 
-	    driver.findElement(By.cssSelector(".has-error")).click();
-	    // 14 | assertText | id=password.errors | Try one with at least 8 characters.
-	    assertThat(driver.findElement(By.id("password.errors")).getText(), is("Try one with at least 8 characters."));
-	  }
-	 
-	 @Test
-	  public void testCambiarContraseniaNoCoincide() {
-	    // Test name: TestCambiarContraseniaNoCoincide
-	    // Step # | name | target | value
-	    // 1 | open | http://fernandezmoraspring.eastus2.cloudapp.azure.com:8080/login | 
-	    driver.get("http://fernandezmoraspring.eastus2.cloudapp.azure.com:8080/login");
-	    // 2 | setWindowSize | 1552x840 | 
-	    driver.manage().window().setSize(new Dimension(1552, 840));
-	    // 3 | type | name=username | prueba
-	    driver.findElement(By.name("username")).sendKeys("prueba");
-	    // 4 | click | name=password | 
-	    driver.findElement(By.name("password")).click();
-	    // 5 | type | name=password | 12345678
-	    driver.findElement(By.name("password")).sendKeys("12345678");
-	    // 6 | click | css=.btn | 
-	    driver.findElement(By.cssSelector(".btn")).click();
-	    // 7 | click | linkText=Edit your profile | 
-	    driver.findElement(By.linkText("Edit your profile")).click();
-	    // 8 | click | id=password | 
-	    driver.findElement(By.id("password")).click();
-	    // 9 | type | id=password | 123456789
-	    driver.findElement(By.id("password")).sendKeys("123456789");
-	    // 10 | click | id=passwordConfirm | 
-	    driver.findElement(By.id("passwordConfirm")).click();
-	    // 11 | type | id=passwordConfirm | 123456788
-	    driver.findElement(By.id("passwordConfirm")).sendKeys("123456788");
-	    // 12 | click | css=.btn | 
-	    driver.findElement(By.cssSelector(".btn")).click();
-	    // 13 | click | css=.has-error | 
-	    driver.findElement(By.cssSelector(".has-error")).click();
-	    // 14 | assertText | id=passwordConfirm.errors | These passwords don't match.
-	    assertThat(driver.findElement(By.id("passwordConfirm.errors")).getText(), is("These passwords don\\\'t match."));
-	  }
-	 
-	 @Test
-	  public void testCambiarContraseniaSinRellenar() {
-	    // Test name: TestCambiarContraseniaSinRellenar
-	    // Step # | name | target | value
-	    // 1 | open | http://fernandezmoraspring.eastus2.cloudapp.azure.com:8080/login | 
-	    driver.get("http://fernandezmoraspring.eastus2.cloudapp.azure.com:8080/login");
-	    // 2 | setWindowSize | 1552x840 | 
-	    driver.manage().window().setSize(new Dimension(1552, 840));
-	    // 3 | type | name=username | prueba
-	    driver.findElement(By.name("username")).sendKeys("prueba");
-	    // 4 | type | name=password | 12345678
-	    driver.findElement(By.name("password")).sendKeys("12345678");
-	    // 5 | click | css=.btn | 
-	    driver.findElement(By.cssSelector(".btn")).click();
-	    // 6 | click | linkText=Edit your profile | 
-	    driver.findElement(By.linkText("Edit your profile")).click();
-	    // 7 | click | css=.btn | 
-	    driver.findElement(By.cssSelector(".btn")).click();
-	    // 8 | click | id=password.errors | 
-	    driver.findElement(By.id("password.errors")).click();
-	    // 9 | assertText | id=password.errors | This field is required.\nTry one with at least 8 characters.
-	    assertThat(driver.findElement(By.id("password.errors")).getText(), is("This field is required.\\\\nTry one with at least 8 characters."));
-	  }
+	public void testCambiarContraseniaCorrecto() {
+		// Test name: TestCambiarContraseniaCorrecto
+		// Step # | name | target | value
+		// 1 | open | http://fernandezmoraspring.eastus2.cloudapp.azure.com:8080/login |
+		driver.get("http://fernandezmoraspring.eastus2.cloudapp.azure.com:8080/login");
+		// 2 | setWindowSize | 1552x840 |
+		driver.manage().window().setSize(new Dimension(1552, 840));
+		// 3 | type | name=username | prueba
+		driver.findElement(By.name("username")).sendKeys("prueba");
+		// 4 | type | name=password | 123456789
+		driver.findElement(By.name("password")).sendKeys("12345678");
+		// 5 | click | css=.btn |
+		driver.findElement(By.cssSelector(".btn")).click();
+		// 6 | click | linkText=Edit your profile |
+		driver.findElement(By.linkText("Edit your profile")).click();
+		// 7 | click | id=password |
+		driver.findElement(By.id("password")).click();
+		// 8 | type | id=password | 12345678
+		driver.findElement(By.id("password")).sendKeys("12345678");
+		// 9 | type | id=passwordConfirm | 12345678
+		driver.findElement(By.id("passwordConfirm")).sendKeys("12345678");
+		// 10 | click | css=.btn |
+		driver.findElement(By.cssSelector(".btn")).click();
+		// 11 | click | id=editprofileform |
+		driver.findElement(By.id("editprofileform")).click();
+		// 12 | click | id=editprofileform |
+		driver.findElement(By.id("editprofileform")).click();
+		// 13 | assertText | css=span | Your data has been updated successfully.
+		assertThat(driver.findElement(By.cssSelector("span")).getText(),
+				is("Your data has been updated successfully."));
+	}
+
+	@Test
+	public void testCambiarContraseniaCorta() {
+		// Test name: TestCambiarContraseniaCorta
+		// Step # | name | target | value
+		// 1 | open | http://fernandezmoraspring.eastus2.cloudapp.azure.com:8080/login |
+		driver.get("http://fernandezmoraspring.eastus2.cloudapp.azure.com:8080/login");
+		// 2 | setWindowSize | 1552x840 |
+		driver.manage().window().setSize(new Dimension(1552, 840));
+		// 3 | type | name=username | prueba
+		driver.findElement(By.name("username")).sendKeys("prueba");
+		// 4 | click | name=password |
+		driver.findElement(By.name("password")).click();
+		// 5 | type | name=password | 12345678
+		driver.findElement(By.name("password")).sendKeys("12345678");
+		// 6 | click | css=.btn |
+		driver.findElement(By.cssSelector(".btn")).click();
+		// 7 | click | linkText=Edit your profile |
+		driver.findElement(By.linkText("Edit your profile")).click();
+		// 8 | click | id=password |
+		driver.findElement(By.id("password")).click();
+		// 9 | type | id=password | 123
+		driver.findElement(By.id("password")).sendKeys("123");
+		// 10 | click | id=passwordConfirm |
+		driver.findElement(By.id("passwordConfirm")).click();
+		// 11 | type | id=passwordConfirm | 123
+		driver.findElement(By.id("passwordConfirm")).sendKeys("123");
+		// 12 | click | css=.btn |
+		driver.findElement(By.cssSelector(".btn")).click();
+		// 13 | click | css=.has-error |
+		driver.findElement(By.cssSelector(".has-error")).click();
+		// 14 | assertText | id=password.errors | Try one with at least 8 characters.
+		assertThat(driver.findElement(By.id("password.errors")).getText(), is("Try one with at least 8 characters."));
+	}
+
+	@Test
+	public void testCambiarContraseniaNoCoincide() {
+		// Test name: TestCambiarContraseniaNoCoincide
+		// Step # | name | target | value
+		// 1 | open | http://fernandezmoraspring.eastus2.cloudapp.azure.com:8080/login |
+		driver.get("http://fernandezmoraspring.eastus2.cloudapp.azure.com:8080/login");
+		// 2 | setWindowSize | 1552x840 |
+		driver.manage().window().setSize(new Dimension(1552, 840));
+		// 3 | type | name=username | prueba
+		driver.findElement(By.name("username")).sendKeys("prueba");
+		// 4 | click | name=password |
+		driver.findElement(By.name("password")).click();
+		// 5 | type | name=password | 12345678
+		driver.findElement(By.name("password")).sendKeys("12345678");
+		// 6 | click | css=.btn |
+		driver.findElement(By.cssSelector(".btn")).click();
+		// 7 | click | linkText=Edit your profile |
+		driver.findElement(By.linkText("Edit your profile")).click();
+		// 8 | click | id=password |
+		driver.findElement(By.id("password")).click();
+		// 9 | type | id=password | 123456789
+		driver.findElement(By.id("password")).sendKeys("123456789");
+		// 10 | click | id=passwordConfirm |
+		driver.findElement(By.id("passwordConfirm")).click();
+		// 11 | type | id=passwordConfirm | 123456788
+		driver.findElement(By.id("passwordConfirm")).sendKeys("123456788");
+		// 12 | click | css=.btn |
+		driver.findElement(By.cssSelector(".btn")).click();
+		// 13 | click | css=.has-error |
+		driver.findElement(By.cssSelector(".has-error")).click();
+		// 14 | assertText | id=passwordConfirm.errors | These passwords don't match.
+		assertThat(driver.findElement(By.id("passwordConfirm.errors")).getText(),
+				is("These passwords don\'t match."));
+	}
+
+	@Test
+	public void testCambiarContraseniaSinRellenar() {
+		// Test name: TestCambiarContraseniaSinRellenar
+		// Step # | name | target | value
+		// 1 | open | http://fernandezmoraspring.eastus2.cloudapp.azure.com:8080/login |
+		driver.get("http://fernandezmoraspring.eastus2.cloudapp.azure.com:8080/login");
+		// 2 | setWindowSize | 1552x840 |
+		driver.manage().window().setSize(new Dimension(1552, 840));
+		// 3 | type | name=username | prueba
+		driver.findElement(By.name("username")).sendKeys("prueba");
+		// 4 | type | name=password | 12345678
+		driver.findElement(By.name("password")).sendKeys("12345678");
+		// 5 | click | css=.btn |
+		driver.findElement(By.cssSelector(".btn")).click();
+		// 6 | click | linkText=Edit your profile |
+		driver.findElement(By.linkText("Edit your profile")).click();
+		// 7 | click | css=.btn |
+		driver.findElement(By.cssSelector(".btn")).click();
+		// 8 | click | id=password.errors |
+		driver.findElement(By.id("password.errors")).click();
+		// 9 | assertText | id=password.errors | This field is required.\nTry one with
+		// at least 8 characters.
+		assertThat(driver.findElement(By.id("password.errors")).getText(),
+				is("This field is required.\nTry one with at least 8 characters."));
+	}
 }
