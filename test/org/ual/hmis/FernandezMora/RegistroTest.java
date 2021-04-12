@@ -83,7 +83,7 @@ public class RegistroTest {
 		// Test name: iniciarSesion-Correcto
 		// Step # | name | target | value
 		// 1 | open | /login |
-		driver.get("http://localhost:8080/login");
+		driver.get("http://fernandezmoraspring.eastus2.cloudapp.azure.com:8080/login");
 		// 2 | setWindowSize | 925x692 |
 		driver.manage().window().setSize(new Dimension(925, 692));
 		// 3 | type | name=username | prueba
@@ -99,7 +99,7 @@ public class RegistroTest {
 		// Test name: iniciarSesion-Incorrecto-NoCampos
 		// Step # | name | target | value
 		// 1 | open | /login |
-		driver.get("http://localhost:8080/login");
+		driver.get("http://fernandezmoraspring.eastus2.cloudapp.azure.com:8080/login");
 		// 2 | setWindowSize | 925x692 |
 		driver.manage().window().setSize(new Dimension(925, 692));
 		// 3 | click | css=.container |
@@ -131,7 +131,7 @@ public class RegistroTest {
 		// Test name: iniciarSesion-Incorrecto-NoContrasenia
 		// Step # | name | target | value
 		// 1 | open | /login |
-		driver.get("http://localhost:8080/login");
+		driver.get("http://fernandezmoraspring.eastus2.cloudapp.azure.com:8080/login");
 		// 2 | setWindowSize | 925x692 |
 		driver.manage().window().setSize(new Dimension(925, 692));
 		// 3 | type | name=username | prueba
@@ -163,7 +163,7 @@ public class RegistroTest {
 		// Test name: iniciarSesion-Incorrecto-NoNombreUsuario
 		// Step # | name | target | value
 		// 1 | open | /login |
-		driver.get("http://localhost:8080/login");
+		driver.get("http://fernandezmoraspring.eastus2.cloudapp.azure.com:8080/login");
 		// 2 | setWindowSize | 925x692 |
 		driver.manage().window().setSize(new Dimension(925, 692));
 		// 3 | click | css=.container |
@@ -199,7 +199,7 @@ public class RegistroTest {
 		// Test name: iniciarSesion-Incorrecto-UsuarioNoRegistrado
 		// Step # | name | target | value
 		// 1 | open | /login |
-		driver.get("http://localhost:8080/login");
+		driver.get("http://fernandezmoraspring.eastus2.cloudapp.azure.com:8080/login");
 		// 2 | setWindowSize | 925x692 |
 		driver.manage().window().setSize(new Dimension(925, 692));
 		// 3 | type | name=username | prueba
@@ -233,7 +233,7 @@ public class RegistroTest {
 		// Test name: registro-Incorrecto-ContraseniaCorta
 		// Step # | name | target | value
 		// 1 | open | /registration |
-		driver.get("http://localhost:8080/registration");
+		driver.get("http://fernandezmoraspring.eastus2.cloudapp.azure.com:8080/login");
 		// 2 | setWindowSize | 925x692 |
 		driver.manage().window().setSize(new Dimension(925, 692));
 		// 3 | click | css=.container |
@@ -269,7 +269,7 @@ public class RegistroTest {
 		// Test name: registro-Incorrecto-ContraseniasNoCoinciden
 		// Step # | name | target | value
 		// 1 | open | /login |
-		driver.get("http://localhost:8080/login");
+		driver.get("http://fernandezmoraspring.eastus2.cloudapp.azure.com:8080/login");
 		// 2 | setWindowSize | 925x692 |
 		driver.manage().window().setSize(new Dimension(925, 692));
 		// 3 | click | linkText=Create an account |
@@ -304,7 +304,7 @@ public class RegistroTest {
 		// Test name: registro-Incorrecto-NoContrasenia
 		// Step # | name | target | value
 		// 1 | open | /login |
-		driver.get("http://localhost:8080/login");
+		driver.get("http://fernandezmoraspring.eastus2.cloudapp.azure.com:8080/login");
 		// 2 | setWindowSize | 925x692 |
 		driver.manage().window().setSize(new Dimension(925, 692));
 		// 3 | click | css=.container |
@@ -346,7 +346,7 @@ public class RegistroTest {
 		// Test name: registro-Incorrecto-NoNombreUsuario
 		// Step # | name | target | value
 		// 1 | open | /login |
-		driver.get("http://localhost:8080/login");
+		driver.get("http://fernandezmoraspring.eastus2.cloudapp.azure.com:8080/login");
 		// 2 | setWindowSize | 925x692 |
 		driver.manage().window().setSize(new Dimension(925, 692));
 		// 3 | click | linkText=Create an account |
@@ -386,7 +386,7 @@ public class RegistroTest {
 		// Test name: registro-Incorrecto-NombreUsuarioCorto
 		// Step # | name | target | value
 		// 1 | open | /login |
-		driver.get("http://localhost:8080/login");
+		driver.get("http://fernandezmoraspring.eastus2.cloudapp.azure.com:8080/login");
 		// 2 | setWindowSize | 925x692 |
 		driver.manage().window().setSize(new Dimension(925, 692));
 		// 3 | click | linkText=Create an account |
@@ -426,7 +426,7 @@ public class RegistroTest {
 		// Test name: registro-Incorrecto-UsuarioExistente
 		// Step # | name | target | value
 		// 1 | open | /login |
-		driver.get("http://localhost:8080/login");
+		driver.get("http://fernandezmoraspring.eastus2.cloudapp.azure.com:8080/login");
 		// 2 | setWindowSize | 925x692 |
 		driver.manage().window().setSize(new Dimension(925, 692));
 		// 3 | click | css=.form-heading |
@@ -464,7 +464,7 @@ public class RegistroTest {
 		// Test name: registro-correcto
 		// Step # | name | target | value
 		// 1 | open | /login |
-		driver.get("http://localhost:8080/login");
+		driver.get("http://fernandezmoraspring.eastus2.cloudapp.azure.com:8080/login");
 		// 2 | setWindowSize | 925x692 |
 		driver.manage().window().setSize(new Dimension(925, 692));
 		// 3 | click | linkText=Create an account |
@@ -472,7 +472,7 @@ public class RegistroTest {
 		// 4 | click | id=username |
 		driver.findElement(By.id("username")).click();
 		// 5 | type | id=username | prueba
-		driver.findElement(By.id("username")).sendKeys("prueba");
+		driver.findElement(By.id("username")).sendKeys("prueba2");
 		// 6 | type | id=password | 12345678
 		driver.findElement(By.id("password")).sendKeys("12345678");
 		// 7 | type | id=passwordConfirm | 12345678
@@ -494,4 +494,127 @@ public class RegistroTest {
 		// 15 | assertText | linkText=Logout | Logout
 		assertThat(driver.findElement(By.linkText("Logout")).getText(), is("Logout"));
 	}
+	
+	@Test
+	  public void testCambiarContraseniaCorrecto() {
+	    // Test name: TestCambiarContraseniaCorrecto
+	    // Step # | name | target | value
+	    // 1 | open | http://fernandezmoraspring.eastus2.cloudapp.azure.com:8080/login | 
+	    driver.get("http://fernandezmoraspring.eastus2.cloudapp.azure.com:8080/login");
+	    // 2 | setWindowSize | 1552x840 | 
+	    driver.manage().window().setSize(new Dimension(1552, 840));
+	    // 3 | type | name=username | prueba
+	    driver.findElement(By.name("username")).sendKeys("prueba");
+	    // 4 | type | name=password | 123456789
+	    driver.findElement(By.name("password")).sendKeys("123456789");
+	    // 5 | click | css=.btn | 
+	    driver.findElement(By.cssSelector(".btn")).click();
+	    // 6 | click | linkText=Edit your profile | 
+	    driver.findElement(By.linkText("Edit your profile")).click();
+	    // 7 | click | id=password | 
+	    driver.findElement(By.id("password")).click();
+	    // 8 | type | id=password | 12345678
+	    driver.findElement(By.id("password")).sendKeys("12345678");
+	    // 9 | type | id=passwordConfirm | 12345678
+	    driver.findElement(By.id("passwordConfirm")).sendKeys("12345678");
+	    // 10 | click | css=.btn | 
+	    driver.findElement(By.cssSelector(".btn")).click();
+	    // 11 | click | id=editprofileform | 
+	    driver.findElement(By.id("editprofileform")).click();
+	    // 12 | click | id=editprofileform | 
+	    driver.findElement(By.id("editprofileform")).click();
+	    // 13 | assertText | css=span | Your data has been updated successfully.
+	    assertThat(driver.findElement(By.cssSelector("span")).getText(), is("Your data has been updated successfully."));
+	  }
+	 @Test
+	  public void testCambiarContraseniaCorta() {
+	    // Test name: TestCambiarContraseniaCorta
+	    // Step # | name | target | value
+	    // 1 | open | http://fernandezmoraspring.eastus2.cloudapp.azure.com:8080/login | 
+	    driver.get("http://fernandezmoraspring.eastus2.cloudapp.azure.com:8080/login");
+	    // 2 | setWindowSize | 1552x840 | 
+	    driver.manage().window().setSize(new Dimension(1552, 840));
+	    // 3 | type | name=username | prueba
+	    driver.findElement(By.name("username")).sendKeys("prueba");
+	    // 4 | click | name=password | 
+	    driver.findElement(By.name("password")).click();
+	    // 5 | type | name=password | 12345678
+	    driver.findElement(By.name("password")).sendKeys("12345678");
+	    // 6 | click | css=.btn | 
+	    driver.findElement(By.cssSelector(".btn")).click();
+	    // 7 | click | linkText=Edit your profile | 
+	    driver.findElement(By.linkText("Edit your profile")).click();
+	    // 8 | click | id=password | 
+	    driver.findElement(By.id("password")).click();
+	    // 9 | type | id=password | 123
+	    driver.findElement(By.id("password")).sendKeys("123");
+	    // 10 | click | id=passwordConfirm | 
+	    driver.findElement(By.id("passwordConfirm")).click();
+	    // 11 | type | id=passwordConfirm | 123
+	    driver.findElement(By.id("passwordConfirm")).sendKeys("123");
+	    // 12 | click | css=.btn | 
+	    driver.findElement(By.cssSelector(".btn")).click();
+	    // 13 | click | css=.has-error | 
+	    driver.findElement(By.cssSelector(".has-error")).click();
+	    // 14 | assertText | id=password.errors | Try one with at least 8 characters.
+	    assertThat(driver.findElement(By.id("password.errors")).getText(), is("Try one with at least 8 characters."));
+	  }
+	 
+	 @Test
+	  public void testCambiarContraseniaNoCoincide() {
+	    // Test name: TestCambiarContraseniaNoCoincide
+	    // Step # | name | target | value
+	    // 1 | open | http://fernandezmoraspring.eastus2.cloudapp.azure.com:8080/login | 
+	    driver.get("http://fernandezmoraspring.eastus2.cloudapp.azure.com:8080/login");
+	    // 2 | setWindowSize | 1552x840 | 
+	    driver.manage().window().setSize(new Dimension(1552, 840));
+	    // 3 | type | name=username | prueba
+	    driver.findElement(By.name("username")).sendKeys("prueba");
+	    // 4 | click | name=password | 
+	    driver.findElement(By.name("password")).click();
+	    // 5 | type | name=password | 12345678
+	    driver.findElement(By.name("password")).sendKeys("12345678");
+	    // 6 | click | css=.btn | 
+	    driver.findElement(By.cssSelector(".btn")).click();
+	    // 7 | click | linkText=Edit your profile | 
+	    driver.findElement(By.linkText("Edit your profile")).click();
+	    // 8 | click | id=password | 
+	    driver.findElement(By.id("password")).click();
+	    // 9 | type | id=password | 123456789
+	    driver.findElement(By.id("password")).sendKeys("123456789");
+	    // 10 | click | id=passwordConfirm | 
+	    driver.findElement(By.id("passwordConfirm")).click();
+	    // 11 | type | id=passwordConfirm | 123456788
+	    driver.findElement(By.id("passwordConfirm")).sendKeys("123456788");
+	    // 12 | click | css=.btn | 
+	    driver.findElement(By.cssSelector(".btn")).click();
+	    // 13 | click | css=.has-error | 
+	    driver.findElement(By.cssSelector(".has-error")).click();
+	    // 14 | assertText | id=passwordConfirm.errors | These passwords don't match.
+	    assertThat(driver.findElement(By.id("passwordConfirm.errors")).getText(), is("These passwords don\\\'t match."));
+	  }
+	 
+	 @Test
+	  public void testCambiarContraseniaSinRellenar() {
+	    // Test name: TestCambiarContraseniaSinRellenar
+	    // Step # | name | target | value
+	    // 1 | open | http://fernandezmoraspring.eastus2.cloudapp.azure.com:8080/login | 
+	    driver.get("http://fernandezmoraspring.eastus2.cloudapp.azure.com:8080/login");
+	    // 2 | setWindowSize | 1552x840 | 
+	    driver.manage().window().setSize(new Dimension(1552, 840));
+	    // 3 | type | name=username | prueba
+	    driver.findElement(By.name("username")).sendKeys("prueba");
+	    // 4 | type | name=password | 12345678
+	    driver.findElement(By.name("password")).sendKeys("12345678");
+	    // 5 | click | css=.btn | 
+	    driver.findElement(By.cssSelector(".btn")).click();
+	    // 6 | click | linkText=Edit your profile | 
+	    driver.findElement(By.linkText("Edit your profile")).click();
+	    // 7 | click | css=.btn | 
+	    driver.findElement(By.cssSelector(".btn")).click();
+	    // 8 | click | id=password.errors | 
+	    driver.findElement(By.id("password.errors")).click();
+	    // 9 | assertText | id=password.errors | This field is required.\nTry one with at least 8 characters.
+	    assertThat(driver.findElement(By.id("password.errors")).getText(), is("This field is required.\\\\nTry one with at least 8 characters."));
+	  }
 }
