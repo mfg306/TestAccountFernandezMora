@@ -35,23 +35,28 @@ public class RegistroTest {
 	@Before
 	public void setUp() {
 		// Browser selector
-		int browser = 0; // 0: firefox, 1: chrome,...
-		Boolean headless = false;
+		String browserProperty = "";
+		browserProperty = System.getProperty("browserWebDriver");
 
-		switch (browser) {
-		case 0: // firefox
+		// run headless: clean test -DbrowserWebDriver=firefox -Dheadless=true
+		Boolean headless = false;
+		if (System.getProperty("headless").equals("true")) {
+			headless = true;
+		}
+
+		switch (browserProperty) {
+		case "firefox": // firefox
 			// Firefox
 			// Descargar geckodriver de https://github.com/mozilla/geckodriver/releases
 			// Descomprimir el archivo geckodriver.exe en la carpeta drivers
 
 //			System.setProperty("webdriver.gecko.driver", "/Users/martafernandez/Downloads/geckodriver");
 			FirefoxOptions firefoxOptions = new FirefoxOptions();
-			if (headless)
-				firefoxOptions.setHeadless(headless);
+			if (headless) firefoxOptions.setHeadless(headless);
 			driver = new FirefoxDriver(firefoxOptions);
 
 			break;
-		case 1: // chrome
+		case "chrome": // chrome
 			// Chrome
 			// Descargar Chromedriver de https://chromedriver.chromium.org/downloads
 			// Descomprimir el archivo chromedriver.exe en la carpeta drivers
