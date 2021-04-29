@@ -106,6 +106,13 @@ public class RegistroTest {
 		driver.findElement(By.cssSelector(".container")).click();
 		// 4 | click | css=.btn |
 		driver.findElement(By.cssSelector(".btn")).click();
+		
+		try {
+	        Thread.sleep(1000);
+	      } catch (InterruptedException e) {
+	        e.printStackTrace();
+	      }
+		
 		// 5 | click | css=.container |
 		driver.findElement(By.cssSelector(".container")).click();
 		// 6 | click | css=span:nth-child(4) |
@@ -138,6 +145,13 @@ public class RegistroTest {
 		driver.findElement(By.name("username")).sendKeys("prueba");
 		// 4 | click | css=.btn |
 		driver.findElement(By.cssSelector(".btn")).click();
+		
+		try {
+	        Thread.sleep(1000);
+	      } catch (InterruptedException e) {
+	        e.printStackTrace();
+	      }
+		
 		// 5 | click | css=.container |
 		driver.findElement(By.cssSelector(".container")).click();
 		// 6 | click | css=span:nth-child(4) |
@@ -174,6 +188,13 @@ public class RegistroTest {
 		driver.findElement(By.name("password")).sendKeys("12345678");
 		// 6 | click | css=.btn |
 		driver.findElement(By.cssSelector(".btn")).click();
+		
+		try {
+	        Thread.sleep(1000);
+	      } catch (InterruptedException e) {
+	        e.printStackTrace();
+	      }
+		
 		// 7 | click | css=.container |
 		driver.findElement(By.cssSelector(".container")).click();
 		// 8 | click | css=span:nth-child(4) |
@@ -201,6 +222,13 @@ public class RegistroTest {
 		driver.findElement(By.name("username")).sendKeys("nuevo");
 		driver.findElement(By.name("password")).sendKeys("0707");
 		driver.findElement(By.name("password")).sendKeys(Keys.ENTER);
+		
+		try {
+	        Thread.sleep(1000);
+	      } catch (InterruptedException e) {
+	        e.printStackTrace();
+	      }
+		
 		driver.findElement(By.cssSelector(".form-signin")).click();
 		driver.findElement(By.cssSelector(".form-group")).click();
 		assertThat(driver.findElement(By.cssSelector("span:nth-child(4)")).getText(),
@@ -215,6 +243,13 @@ public class RegistroTest {
 		driver.findElement(By.name("password")).sendKeys("1");
 		driver.findElement(By.cssSelector(".container")).click();
 		driver.findElement(By.cssSelector(".btn")).click();
+		
+		try {
+	        Thread.sleep(1000);
+	      } catch (InterruptedException e) {
+	        e.printStackTrace();
+	      }
+		
 		driver.findElement(By.cssSelector(".container")).click();
 		driver.findElement(By.cssSelector(".form-signin")).click();
 		driver.findElement(By.cssSelector("span:nth-child(4)")).click();
@@ -241,6 +276,13 @@ public class RegistroTest {
 		driver.findElement(By.id("passwordConfirm")).sendKeys("contraseniadeprueba12");
 		// 7 | click | css=.btn |
 		driver.findElement(By.cssSelector(".btn")).click();
+		
+		try {
+	        Thread.sleep(1000);
+	      } catch (InterruptedException e) {
+	        e.printStackTrace();
+	      }
+		
 		// 8 | click | id=passwordConfirm.errors |
 		driver.findElement(By.id("passwordConfirm.errors")).click();
 		// 9 | click | id=passwordConfirm.errors |
@@ -269,6 +311,13 @@ public class RegistroTest {
 		driver.findElement(By.cssSelector(".container")).click();
 		// 4 | click | linkText=Create an account |
 		driver.findElement(By.linkText("Create an account")).click();
+		
+		try {
+	        Thread.sleep(1000);
+	      } catch (InterruptedException e) {
+	        e.printStackTrace();
+	      }
+		
 		// 5 | click | id=userForm |
 		driver.findElement(By.id("userForm")).click();
 		// 6 | click | id=password |
@@ -279,6 +328,13 @@ public class RegistroTest {
 		driver.findElement(By.id("username")).sendKeys("prueba");
 		// 9 | click | css=.btn |
 		driver.findElement(By.cssSelector(".btn")).click();
+		
+		try {
+	        Thread.sleep(1000);
+	      } catch (InterruptedException e) {
+	        e.printStackTrace();
+	      }
+		
 		// 10 | click | css=.form-group:nth-child(3) |
 		driver.findElement(By.cssSelector(".form-group:nth-child(3)")).click();
 		// 11 | click | id=password.errors |
@@ -309,6 +365,13 @@ public class RegistroTest {
 		driver.manage().window().setSize(new Dimension(925, 692));
 		// 3 | click | linkText=Create an account |
 		driver.findElement(By.linkText("Create an account")).click();
+		
+		try {
+	        Thread.sleep(1000);
+	      } catch (InterruptedException e) {
+	        e.printStackTrace();
+	      }
+		
 		// 4 | click | css=.container |
 		driver.findElement(By.cssSelector(".container")).click();
 		// 5 | click | id=password |
@@ -319,6 +382,13 @@ public class RegistroTest {
 		driver.findElement(By.id("passwordConfirm")).sendKeys("12345678");
 		// 8 | click | css=.btn |
 		driver.findElement(By.cssSelector(".btn")).click();
+		
+		try {
+	        Thread.sleep(1000);
+	      } catch (InterruptedException e) {
+	        e.printStackTrace();
+	      }
+		
 		// 9 | click | css=.container |
 		driver.findElement(By.cssSelector(".container")).click();
 		// 10 | click | id=username.errors |
@@ -359,6 +429,13 @@ public class RegistroTest {
 		driver.findElement(By.id("passwordConfirm")).sendKeys("12345678");
 		// 8 | click | css=.btn |
 		driver.findElement(By.cssSelector(".btn")).click();
+		
+		try {
+	        Thread.sleep(1000);
+	      } catch (InterruptedException e) {
+	        e.printStackTrace();
+	      }
+		
 		// 9 | click | css=.container |
 		driver.findElement(By.cssSelector(".container")).click();
 		// 10 | click | id=username.errors |
@@ -391,6 +468,13 @@ public class RegistroTest {
 		driver.findElement(By.cssSelector(".form-heading")).click();
 		// 4 | click | linkText=Create an account |
 		driver.findElement(By.linkText("Create an account")).click();
+		
+		try {
+	        Thread.sleep(1000);
+	      } catch (InterruptedException e) {
+	        e.printStackTrace();
+	      }
+		
 		// 5 | type | id=username | prueba
 		driver.findElement(By.id("username")).sendKeys("prueba");
 		// 6 | type | id=password | 12345678
@@ -399,6 +483,13 @@ public class RegistroTest {
 		driver.findElement(By.id("passwordConfirm")).sendKeys("12345678");
 		// 8 | click | css=.btn |
 		driver.findElement(By.cssSelector(".btn")).click();
+		
+		try {
+	        Thread.sleep(1000);
+	      } catch (InterruptedException e) {
+	        e.printStackTrace();
+	      }
+		
 		// 9 | click | css=.container |
 		driver.findElement(By.cssSelector(".container")).click();
 		// 10 | click | id=username.errors |
@@ -423,11 +514,25 @@ public class RegistroTest {
 		driver.manage().window().setSize(new Dimension(794, 593));
 		driver.findElement(By.cssSelector(".container")).click();
 		driver.findElement(By.linkText("Create an account")).click();
+		
+		try {
+	        Thread.sleep(1000);
+	      } catch (InterruptedException e) {
+	        e.printStackTrace();
+	      }
+		
 		driver.findElement(By.id("username")).click();
 		driver.findElement(By.id("username")).sendKeys("cuentanueva4");
 		driver.findElement(By.id("password")).sendKeys("12345678");
 		driver.findElement(By.id("passwordConfirm")).sendKeys("12345678");
 		driver.findElement(By.id("passwordConfirm")).sendKeys(Keys.ENTER);
+		
+		try {
+	        Thread.sleep(1000);
+	      } catch (InterruptedException e) {
+	        e.printStackTrace();
+	      }
+		
 		driver.findElement(By.cssSelector("h2")).click();
 		driver.findElement(By.cssSelector("h2")).click();
 		assertThat(driver.findElement(By.cssSelector("h2")).getText(), is("Create your account"));
@@ -449,6 +554,13 @@ public class RegistroTest {
 		driver.findElement(By.cssSelector(".btn")).click();
 		// 6 | click | linkText=Edit your profile |
 		driver.findElement(By.linkText("Edit your profile")).click();
+		
+		try {
+	        Thread.sleep(1000);
+	      } catch (InterruptedException e) {
+	        e.printStackTrace();
+	      }
+		
 		// 7 | click | id=password |
 		driver.findElement(By.id("password")).click();
 		// 8 | type | id=password | 12345678
@@ -457,6 +569,13 @@ public class RegistroTest {
 		driver.findElement(By.id("passwordConfirm")).sendKeys("12345678");
 		// 10 | click | css=.btn |
 		driver.findElement(By.cssSelector(".btn")).click();
+		
+		try {
+	        Thread.sleep(1000);
+	      } catch (InterruptedException e) {
+	        e.printStackTrace();
+	      }
+		
 		// 11 | click | id=editprofileform |
 		driver.findElement(By.id("editprofileform")).click();
 		// 12 | click | id=editprofileform |
@@ -482,6 +601,13 @@ public class RegistroTest {
 		driver.findElement(By.name("password")).sendKeys("12345678");
 		// 6 | click | css=.btn |
 		driver.findElement(By.cssSelector(".btn")).click();
+		
+		try {
+	        Thread.sleep(1000);
+	      } catch (InterruptedException e) {
+	        e.printStackTrace();
+	      }
+		
 		// 7 | click | linkText=Edit your profile |
 		driver.findElement(By.linkText("Edit your profile")).click();
 		// 8 | click | id=password |
@@ -494,6 +620,13 @@ public class RegistroTest {
 		driver.findElement(By.id("passwordConfirm")).sendKeys("123");
 		// 12 | click | css=.btn |
 		driver.findElement(By.cssSelector(".btn")).click();
+		
+		try {
+	        Thread.sleep(1000);
+	      } catch (InterruptedException e) {
+	        e.printStackTrace();
+	      }
+		
 		// 13 | click | css=.has-error |
 		driver.findElement(By.cssSelector(".has-error")).click();
 		// 14 | assertText | id=password.errors | Try one with at least 8 characters.
@@ -516,8 +649,22 @@ public class RegistroTest {
 		driver.findElement(By.name("password")).sendKeys("12345678");
 		// 6 | click | css=.btn |
 		driver.findElement(By.cssSelector(".btn")).click();
+		
+		try {
+	        Thread.sleep(1000);
+	      } catch (InterruptedException e) {
+	        e.printStackTrace();
+	      }
+		
 		// 7 | click | linkText=Edit your profile |
 		driver.findElement(By.linkText("Edit your profile")).click();
+		
+		try {
+	        Thread.sleep(1000);
+	      } catch (InterruptedException e) {
+	        e.printStackTrace();
+	      }
+		
 		// 8 | click | id=password |
 		driver.findElement(By.id("password")).click();
 		// 9 | type | id=password | 123456789
@@ -528,6 +675,13 @@ public class RegistroTest {
 		driver.findElement(By.id("passwordConfirm")).sendKeys("123456788");
 		// 12 | click | css=.btn |
 		driver.findElement(By.cssSelector(".btn")).click();
+		
+		try {
+	        Thread.sleep(1000);
+	      } catch (InterruptedException e) {
+	        e.printStackTrace();
+	      }
+		
 		// 13 | click | css=.has-error |
 		driver.findElement(By.cssSelector(".has-error")).click();
 		// 14 | assertText | id=passwordConfirm.errors | These passwords don't match.
@@ -549,10 +703,31 @@ public class RegistroTest {
 		driver.findElement(By.name("password")).sendKeys("12345678");
 		// 5 | click | css=.btn |
 		driver.findElement(By.cssSelector(".btn")).click();
+		
+		try {
+	        Thread.sleep(1000);
+	      } catch (InterruptedException e) {
+	        e.printStackTrace();
+	      }
+		
 		// 6 | click | linkText=Edit your profile |
 		driver.findElement(By.linkText("Edit your profile")).click();
+		
+		try {
+	        Thread.sleep(1000);
+	      } catch (InterruptedException e) {
+	        e.printStackTrace();
+	      }
+		
 		// 7 | click | css=.btn |
 		driver.findElement(By.cssSelector(".btn")).click();
+		
+		try {
+	        Thread.sleep(1000);
+	      } catch (InterruptedException e) {
+	        e.printStackTrace();
+	      }
+		
 		// 8 | click | id=password.errors |
 		driver.findElement(By.id("password.errors")).click();
 		// 9 | assertText | id=password.errors | This field is required.\nTry one with
