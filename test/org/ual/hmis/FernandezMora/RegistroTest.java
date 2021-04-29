@@ -34,42 +34,29 @@ public class RegistroTest {
 
 	@Before
 	public void setUp() {
-
-		// Using a system property to chose the browser (by jjcanada)
-		// Browser as System.property: "browserWebDriver"
-		// In maven, call:
-		// run with firefox: clean test -DbrowserWebDriver=firefox
-		// run with chrome : clean test -DbrowserWebDriver=chrome
-
-		// System.setProperty("browserWebDriver", "firefox");
-		String browserProperty = "";
-		browserProperty = System.getProperty("browserWebDriver");
-
-		// run headless: clean test -DbrowserWebDriver=firefox -Dheadless=true
+		// Browser selector
+		int browser = 0; // 0: firefox, 1: chrome,...
 		Boolean headless = false;
-		if (System.getProperty("headless").equals("true")) {
-			headless = true;
-		}
 
-		switch (browserProperty) {
-		case "firefox":
+		switch (browser) {
+		case 0: // firefox
 			// Firefox
 			// Descargar geckodriver de https://github.com/mozilla/geckodriver/releases
 			// Descomprimir el archivo geckodriver.exe en la carpeta drivers
 
-//			System.setProperty("webdriver.gecko.driver", "/Users/martafernandez/Downloads/geckodriver");
+			System.setProperty("webdriver.gecko.driver", "/Users/martafernandez/Downloads/geckodriver");
 			FirefoxOptions firefoxOptions = new FirefoxOptions();
 			if (headless)
 				firefoxOptions.setHeadless(headless);
 			driver = new FirefoxDriver(firefoxOptions);
 
 			break;
-		case "chrome":
+		case 1: // chrome
 			// Chrome
 			// Descargar Chromedriver de https://chromedriver.chromium.org/downloads
 			// Descomprimir el archivo chromedriver.exe en la carpeta drivers
 
-//			System.setProperty("webdriver.chrome.driver", "/Users/martafernandez/Downloads/chromedriver");
+			System.setProperty("webdriver.chrome.driver", "/Users/martafernandez/Downloads/chromedriver");
 			ChromeOptions chromeOptions = new ChromeOptions();
 			if (headless)
 				chromeOptions.setHeadless(headless);
@@ -544,7 +531,8 @@ public class RegistroTest {
 		// 13 | click | css=.has-error |
 		driver.findElement(By.cssSelector(".has-error")).click();
 		// 14 | assertText | id=passwordConfirm.errors | These passwords don't match.
-		assertThat(driver.findElement(By.id("passwordConfirm.errors")).getText(), is("These passwords don\'t match."));
+		assertThat(driver.findElement(By.id("passwordConfirm.errors")).getText(),
+				is("These passwords don\'t match."));
 	}
 
 	@Test
