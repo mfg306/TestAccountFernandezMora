@@ -52,6 +52,7 @@ public class RegistroTest {
 				headless = true;
 			}
 		}catch(NullPointerException e) {
+			System.out.println("Fallo porque es null");
 			e.printStackTrace();
 		}
 
