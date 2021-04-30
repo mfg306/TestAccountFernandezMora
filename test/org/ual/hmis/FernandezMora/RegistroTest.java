@@ -47,9 +47,14 @@ public class RegistroTest {
 
 		// run headless: clean test -DbrowserWebDriver=firefox -Dheadless=true
 		Boolean headless = false;
-		if (System.getProperty("headless").equals("true")) {
-			headless = true;
+		try {
+			if (System.getProperty("headless").equals("true")) {
+				headless = true;
+			}
+		}catch(NullPointerException e) {
+			e.printStackTrace();
 		}
+
 
 		switch (browserProperty) {
 		case "firefox":
