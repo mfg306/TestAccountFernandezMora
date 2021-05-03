@@ -65,8 +65,7 @@ public class RegistroTest {
 
 //			System.setProperty("webdriver.gecko.driver", "drivers/geckodriver.exe");
 			FirefoxOptions firefoxOptions = new FirefoxOptions();
-			if (headless)
-				firefoxOptions.setHeadless(headless);
+			if (headless) firefoxOptions.setHeadless(headless);
 			driver = new FirefoxDriver(firefoxOptions);
 
 			break;
@@ -77,10 +76,10 @@ public class RegistroTest {
 
 //			System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
 			ChromeOptions chromeOptions = new ChromeOptions();
-			if (headless)
-				chromeOptions.setHeadless(headless);
+			if (headless) chromeOptions.setHeadless(headless);
 			chromeOptions.addArguments("window-size=1920,1080");
 			driver = new ChromeDriver(chromeOptions);
+			System.out.println("Me está haciendo esto");
 
 			break;
 
